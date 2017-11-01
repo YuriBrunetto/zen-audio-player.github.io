@@ -1,5 +1,16 @@
-body {
-    background-color: #f9f9f9;
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, input {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.principal {
+    background: linear-gradient(135deg, #b377fa 0%,#f7cb67 100%);
+    padding: 128px 0;
+    transition: all .3s;
 }
 
 header, footer {
@@ -8,13 +19,24 @@ header, footer {
 
 header {
     width: 80%;
-    margin: 50px auto 0 auto;
+    margin: 0 auto;
+    color: #fff;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(255,255,255,.7);
 }
 
 @media all and (min-width: 480px) {
 
     header {
-        max-width: 450px;
+        max-width: 515px;
     }
 
 }
@@ -24,19 +46,7 @@ header {
 }
 
 footer {
-    border-top: 1px solid #eeeeee;
-    margin-top: 50px;
     padding: 50px 0;
-}
-
-hgroup {
-    margin-top: 30px;
-}
-
-h2 {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
 }
 
 a {
@@ -53,8 +63,7 @@ a {
 }
 
 #container {
-    width: 80%;
-    margin: 10px auto 0;
+    margin: 32px auto 0;
 }
 
 .toggleRepeatActive {
@@ -77,16 +86,45 @@ a {
 
 }
 
+.input-group {
+    border-radius: 4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.05);
+}
+
 #v {
+    border: 0;
+    border-radius: 4px 0 0 4px;
     margin: 0 auto;
     width: 100%;
-    text-align: center;
-    font-size: 16px;
-    padding-left: 50px;
+    font-size: 24px;
+    padding: 0 24px;
+    color: #666666;
+    height: 64px;
 }
 
 #v::-ms-clear {
     display: none;
+}
+
+.input-group-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    height: 64px;
+}
+
+.btn-search {
+    background: #fff;
+    border: 0;
+    height: 64px;
+    width: 64px;
+}
+.btn-search i {
+    font-size: 24px;
+    color: #cccccc;
+}
+.btn-search:hover {
+    background: #fff;
 }
 
 #player {
@@ -163,13 +201,17 @@ a {
 }
 
 .tt-menu {
-    border: 1px solid #cccccc;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 6px 18px rgba(0,0,0,.1);
+    border-radius: 4px;
+    margin-top: 4px;
+    padding: 8px 0;
+    width: calc(100% + 64px);
 }
 
 .tt-suggestion {
-    text-align: center;
+    font-size: 16px;
+    padding: 8px 24px;
+    transition: background .3s;
 }
 
 .tt-cursor, .tt-suggestion:hover {
@@ -183,26 +225,6 @@ a {
     overflow: hidden;
     border-radius: 6px;
     margin: 0 auto;
-}
-
-.btn-search {
-    width: 50px;
-}
-
-@media all and (min-width: 480px) {
-
-    .input-search {
-        height: 50px;
-    }
-
-    .btn-search {
-        height: 50px;
-    }
-
-    .fa-search {
-        font-size: 20px;
-    }
-
 }
 
 .sponsor {

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="bower_components/primer-css/css/primer.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/plyr/dist/plyr.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
     <link rel="stylesheet" href="css/styles.css">
 
     <script type="text/javascript">window._trackJs = { token: "f58d0b7c4b4248939fddc582f9e55c9d" };</script>
@@ -29,71 +30,66 @@
     <script src="bower_components/plyr/dist/plyr.js"></script>
 
 </head>
+
 <body>
-    <header>
-        <!-- The logo & description -->
-        <figure>
-            <a href="https://zenplayer.audio/" title="Zen Audio Player" class="zen-logo">
-                <img src="img/zen-audio-player-905.png" class="img-100" alt="Zen Audio Player logo">
-            </a>
-        </figure>
-
-        <hgroup>
+    <main class="principal">
+        <header>
             <h1>Zen Audio Player</h1>
-            <h2 class="color-grey">Listen to YouTube videos, without the distracting visuals.</h2>
-            <h2 class="color-grey hide flash" id="mobile-message"></h2>
-        </hgroup>
-    </header>
-    <div id="container">
-        <!-- The form -->
-        <form id="form">
-            <div class="input-group">
-                <input type="text" id="v" name="v" class="input-search color-grey" placeholder="Search, YouTube video ID, or URL">
-                <span class="input-group-button">
-                    <button class="btn btn-search" id="submit">
-                        <i class="fa fa-search"></i>
+            <h2>Listen to YouTube videos, without the distracting visuals.</h2>
+            <h2 class="hide flash" id="mobile-message"></h2>
+        </header>
+
+        <section id="container">
+            <!-- The form -->
+            <form id="form">
+                <div class="input-group">
+                    <input type="text" id="v" name="v" class="input-search color-grey" placeholder="Search a YouTube video or an URL">
+                    <span class="input-group-button">
+                        <button class="btn btn-search" id="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+            <div id="search-results">
+                <h3>Search Results</h3>
+                <ul></ul>
+            </div>
+            <div id="zen-error" class="hide flash flash-error"></div>
+            <!-- The video, along with related content & messages -->
+            <div id="audioplayer">
+                <h3>
+                    <a id="zen-video-title" class="plyr__cite plyr__cite--video"></a>
+                </h3>
+
+                <div id="playerControls">
+                    <button class="btn" id="togglePlayer">
+                        Show Player
                     </button>
-                </span>
-            </div>
-        </form>
-        <div id="search-results">
-            <h3>Search Results</h3>
-            <ul></ul>
-        </div>
-        <div id="zen-error" class="hide flash flash-error"></div>
-        <!-- The video, along with related content & messages -->
-        <div id="audioplayer">
-            <h3>
-                <a id="zen-video-title" class="plyr__cite plyr__cite--video"></a>
-            </h3>
+                    <button class="btn" id="toggleDescription">
+                        Show Description
+                    </button>
+                    <button class="btn" id="toggleRepeat">
+                        Repeat Track
+                    </button>
+                </div>
 
-            <div id="playerControls">
-                <button class="btn" id="togglePlayer">
-                    Show Player
-                </button>
-                <button class="btn" id="toggleDescription">
-                    Show Description
-                </button>
-                <button class="btn" id="toggleRepeat">
-                    Repeat Track
-                </button>
+                <!-- Plyr controls' icons and Plyr player itself -->
+                <div id="plyr-svg" hidden>
+                </div>
+                <div class="plyr">
+                    <audio></audio>
+                </div>
+                <br>
+                <div id="zen-video-description"></div>
+                <br>
             </div>
-
-            <!-- Plyr controls' icons and Plyr player itself -->
-            <div id="plyr-svg" hidden>
-            </div>
-            <div class="plyr">
-                <audio></audio>
-            </div>
-            <br>
-            <div id="zen-video-description"></div>
-            <br>
-        </div>
-        <button id="demo" class="btn">
-            <i class="fa fa-mouse-pointer"></i>
-            Click for Demo
-        </button>
-    </div>
+            <button id="demo" class="btn">
+                <i class="fa fa-mouse-pointer"></i>
+                Click for Demo
+            </button>
+        </section>
+    </main>
 
     <footer>
         <!-- Twitter hashtag button: #ZenAudioPlayer -->
@@ -120,6 +116,7 @@
             <div class="clear-both"></div>
         </div>
     </footer>
+
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
         {

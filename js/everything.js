@@ -739,6 +739,16 @@ $(function() {
             evt.preventDefault();
         }
     });
+
+    // animated background
+    var i = 135;
+
+    setInterval(function() {
+        i++;
+        if (i >= 360) i = 0;
+        $('.principal').css('background', `linear-gradient(${i}deg, #b377fa 0%,#f7cb67 100%)`)
+    }, 200);
+    // background: linear-gradient(135deg, #b377fa 0%,#f7cb67 100%);
 });
 
 /*eslint-disable */
