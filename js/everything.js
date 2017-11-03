@@ -748,7 +748,17 @@ $(function() {
         if (i >= 360) i = 0;
         $('.principal').css('background', `linear-gradient(${i}deg, #b377fa 0%,#f7cb67 100%)`)
     }, 200);
-    // background: linear-gradient(135deg, #b377fa 0%,#f7cb67 100%);
+
+    // input focus
+    var $group = $('.input-group'),
+        $input = $('#v');
+
+    $input.on('focus', function() {
+        $group.css('box-shadow', '0 8px 20px rgba(0,0,0,.2)');
+    });
+    $input.focusout(function() {
+        $group.css('box-shadow', '0 6px 16px rgba(0,0,0,.05)');
+    });
 });
 
 /*eslint-disable */
