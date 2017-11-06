@@ -216,7 +216,7 @@ footer a:hover {
 }
 
 #form {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 /* Media controls */
@@ -240,13 +240,65 @@ footer a:hover {
 }
 
 #search-results {
-    text-align: center;
     display: none;
 }
 
-#search-results li {
-    list-style-type: none;
+#search-results h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
 }
+
+#search-results ul {
+    box-shadow: 0 6px 16px rgba(0,0,0,.1);
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 32px;
+}
+
+#search-results li {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    display: flex;
+    list-style-type: none;
+    padding: 24px;
+    transition: background-color .3s ease-in-out;
+}
+#search-results li:last-child {
+    border-bottom: 0;
+}
+#search-results li:hover {
+    background-color: #ececec;
+}
+
+#search-results li > h4 {
+    margin-left: 16px;
+    order: 2;
+    font-size: 18px;
+    line-height: 120%;
+}
+
+#search-results li > h4 a {
+    color: #666666;
+    transition: opacity .2s;
+}
+#search-results li > h4 a:hover {
+    opacity: .7;
+    text-decoration: none;
+}
+
+#search-results li > a {
+    border-radius: 2px;
+    flex: 0 0 180px;
+    order: 1;
+    overflow: hidden;
+}
+
+#search-results li img {
+    width: 100%;
+}
+
 
 /* Input field fixes and search suggestion style.
  * typeahead conflicts with primercss */
