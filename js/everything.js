@@ -280,9 +280,13 @@ var ZenPlayer = {
     },
     show: function() {
         $("#audioplayer").show();
+        // Hide the demo link as some video is playing
+        $("#demo").hide();
     },
     hide: function() {
         $("#audioplayer").hide();
+        // Show the demo link as no video is playing
+        $("#demo").show();
     },
     setupTitle: function() {
         // Prepend music note only if title does not already begin with one.
@@ -390,7 +394,13 @@ function toggleElement(event, toggleID, buttonText) {
     var toggleTextElement = $("#" + event.currentTarget.id);
 
     if (toggleElement.is(":visible")) {
-        toggleTextElement.text("Hide " + buttonText);
+         // Check for current state(Hide/Show) and toggle it
+        if (toggleTextElement.is(":contains(Hide)")) {
+            toggleTextElement.text("Show " + buttonText);
+        }
+        else if (toggleTextElement.is(":contains(Show)")) {
+            toggleTextElement.text("Hide " + buttonText);
+        }
     }
     else {
         toggleTextElement.text("Show " + buttonText);
@@ -675,10 +685,6 @@ $(function() {
         }
     });
 
-    // Hide the demo link if playing any of the demo video's audio
-    if ($.inArray(currentVideoID, demos) !== -1) {
-        $("#demo").hide();
-    }
 
     // Reverts to Home when there is no text in input
     $("#v").on("input", function() {
